@@ -1,0 +1,10 @@
+Coke:3.4
+Sprite:2.3
+Dr. Pepper:4.7
+Pepsi:3.2
+Water:3.5
+Orange Juice:1.0
+Apple Juice:4.9
+Tea:6.3
+Sweetened Ice Tea:1.1
+Lemonade:9.0

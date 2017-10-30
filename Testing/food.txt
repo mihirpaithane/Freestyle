@@ -1,0 +1,15 @@
+Chicken Pesto:4.5
+Chicken Parmesan:10.3
+Beef Stew:40.0
+Fettucini Alfredo:10.0
+Fried Chicken:15.6
+Lasagna:17.4
+Vegetable Lasagna:10.0
+Pizza:6.9
+Breadstick:3.4
+Black Bean Burger:17.8
+BLT:8.7
+Spaghetti:4.5
+Grilled Cheese:9.7
+Gyro:19.5
+Thai Curry:14.0

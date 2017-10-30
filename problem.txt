@@ -14,6 +14,4 @@ Possible solutions: (Needed more constraints)
 	OptaPlanner
 	Knapsack
 
-
 - Feel free to use any data structures and packages or create your own. Submit all your files in a zipped directory.
- 

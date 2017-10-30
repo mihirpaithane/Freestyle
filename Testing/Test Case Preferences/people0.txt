@@ -1,0 +1,300 @@
+Francisco Smith
+Pepsi,Lemonade
+Spaghetti,Thai Curry,Spaghetti
+Elias Shook
+Coke,Sweetened Ice Tea
+Lasagna,Fried Chicken,Chicken Pesto
+Lorraine Munro
+Dr. Pepper,Sprite
+Beef Stew,BLT,Chicken Pesto
+Marsha Mateo
+Sweetened Ice Tea,Dr. Pepper
+Fettucini Alfredo,Thai Curry,Thai Curry
+Donovan Guevara
+Coke,Lemonade
+Pizza,BLT,Black Bean Burger
+Brigitte Malmin
+Coke,Sprite
+Lasagna,Grilled Cheese,Spaghetti
+Christina Litton
+Orange Juice,Apple Juice
+Pizza,Thai Curry,Chicken Parmesan
+Alice Martin
+Dr. Pepper,Pepsi
+Black Bean Burger,Pizza,Fettucini Alfredo
+Thelma Minnich
+Coke,Sprite
+Chicken Parmesan,BLT,Vegetable Lasagna
+Ana Robinson
+Coke,Orange Juice
+Black Bean Burger,Chicken Pesto,Chicken Pesto
+Bobby Clothier
+Water,Apple Juice
+Chicken Parmesan,Breadstick,Beef Stew
+Dorothy Jones
+Apple Juice,Sweetened Ice Tea
+Pizza,Lasagna,Breadstick
+Priscilla Espinoza
+Tea,Sweetened Ice Tea
+Vegetable Lasagna,Black Bean Burger,Beef Stew
+Ron Leung
+Orange Juice,Apple Juice
+Vegetable Lasagna,Grilled Cheese,Spaghetti
+Norma Kies
+Apple Juice,Lemonade
+Chicken Parmesan,Grilled Cheese,Thai Curry
+Francis Lopez
+Water,Coke
+Breadstick,Lasagna,Fried Chicken
+Candace Charbonneau
+Water,Pepsi
+Thai Curry,Spaghetti,Fettucini Alfredo
+Louis Yuengling
+Coke,Dr. Pepper
+Beef Stew,Pizza,Chicken Parmesan
+Stanley Cash
+Sprite,Lemonade
+Gyro,Breadstick,Spaghetti
+Ralph Johnson
+Tea,Dr. Pepper
+Gyro,Pizza,Thai Curry
+Jason White
+Sprite,Lemonade
+Chicken Parmesan,Chicken Parmesan,Vegetable Lasagna
+Ashley Chambers
+Tea,Orange Juice
+Chicken Pesto,Thai Curry,Chicken Pesto
+Blanche James
+Coke,Coke
+Vegetable Lasagna,Breadstick,BLT
+Dennis Lajoie
+Pepsi,Sweetened Ice Tea
+Chicken Parmesan,Grilled Cheese,Chicken Pesto
+Marshall Emme
+Coke,Lemonade
+BLT,BLT,Vegetable Lasagna
+Robert Grace
+Orange Juice,Pepsi
+Fettucini Alfredo,Spaghetti,Chicken Parmesan
+Kelly Schad
+Dr. Pepper,Coke
+BLT,Breadstick,Spaghetti
+Mark Colletti
+Water,Water
+BLT,Lasagna,Breadstick
+Debbie Brooks
+Lemonade,Lemonade
+Breadstick,BLT,Grilled Cheese
+Timmy Forman
+Water,Dr. Pepper
+Black Bean Burger,Breadstick,Fettucini Alfredo
+Barbara Thompson
+Apple Juice,Coke
+Gyro,Chicken Parmesan,Spaghetti
+Daphine Barnett
+Apple Juice,Apple Juice
+Chicken Parmesan,Pizza,Pizza
+Odelia Watson
+Lemonade,Pepsi
+Fried Chicken,Grilled Cheese,Chicken Pesto
+Rick Mellish
+Apple Juice,Lemonade
+Breadstick,Gyro,Lasagna
+Wayne Ortega
+Sweetened Ice Tea,Dr. Pepper
+Pizza,Lasagna,Breadstick
+Gwen Marion
+Dr. Pepper,Sweetened Ice Tea
+Thai Curry,Fried Chicken,Fettucini Alfredo
+Regina Griest
+Sprite,Lemonade
+Breadstick,Lasagna,Breadstick
+Michael Cobbs
+Apple Juice,Orange Juice
+Breadstick,Spaghetti,Fettucini Alfredo
+Inell Mesta
+Tea,Coke
+Chicken Pesto,Gyro,BLT
+Earline Dunseith
+Water,Sweetened Ice Tea
+Lasagna,Beef Stew,BLT
+Latisha Foster
+Pepsi,Sweetened Ice Tea
+BLT,Chicken Pesto,Chicken Pesto
+George Burgess
+Orange Juice,Tea
+Gyro,Spaghetti,Breadstick
+Randall Brookman
+Orange Juice,Coke
+Thai Curry,Lasagna,Lasagna
+Carol Laroche
+Sprite,Orange Juice
+Grilled Cheese,Spaghetti,Spaghetti
+Tessa North
+Water,Pepsi
+Chicken Pesto,BLT,Pizza
+Robert Luster
+Dr. Pepper,Orange Juice
+Breadstick,Lasagna,Gyro
+Roland Steward
+Tea,Water
+Pizza,Lasagna,BLT
+Scott Warren
+Lemonade,Sweetened Ice Tea
+Vegetable Lasagna,Vegetable Lasagna,BLT
+Rudy Frisco
+Tea,Orange Juice
+Grilled Cheese,Lasagna,Vegetable Lasagna
+Jeffrey Turner
+Orange Juice,Dr. Pepper
+Breadstick,Chicken Parmesan,Gyro
+Rosetta Fritz
+Orange Juice,Orange Juice
+Beef Stew,Black Bean Burger,Grilled Cheese
+Lori Verge
+Apple Juice,Dr. Pepper
+Thai Curry,Breadstick,BLT
+Scott Ellis
+Dr. Pepper,Coke
+Spaghetti,Spaghetti,Vegetable Lasagna
+Bernard Moncivais
+Coke,Sprite
+Gyro,Spaghetti,Thai Curry
+Robert Neave
+Pepsi,Lemonade
+Thai Curry,Chicken Parmesan,Black Bean Burger
+Jeanne Benninger
+Sprite,Coke
+Breadstick,Fettucini Alfredo,Pizza
+Greg Fox
+Water,Pepsi
+Black Bean Burger,Beef Stew,Thai Curry
+Betty Gomez
+Apple Juice,Pepsi
+Chicken Parmesan,Grilled Cheese,Thai Curry
+William Delapp
+Water,Tea
+Gyro,Gyro,Fried Chicken
+Rita Smith
+Pepsi,Orange Juice
+Gyro,Chicken Pesto,Lasagna
+Thomas Nesbitt
+Water,Sweetened Ice Tea
+Fettucini Alfredo,Grilled Cheese,Black Bean Burger
+Vance Cobb
+Sweetened Ice Tea,Sprite
+Lasagna,Breadstick,Black Bean Burger
+Alex Yorke
+Dr. Pepper,Apple Juice
+Thai Curry,Beef Stew,Fettucini Alfredo
+Milton Alexander
+Lemonade,Apple Juice
+Grilled Cheese,Gyro,BLT
+Chris Ivan
+Sweetened Ice Tea,Tea
+Chicken Pesto,Thai Curry,Vegetable Lasagna
+Jane Blanco
+Apple Juice,Sprite
+BLT,Gyro,BLT
+Richard Stansbery
+Dr. Pepper,Water
+Beef Stew,Vegetable Lasagna,Fried Chicken
+Jackie Madho
+Dr. Pepper,Orange Juice
+Vegetable Lasagna,Chicken Parmesan,Fettucini Alfredo
+Frank Mayer
+Apple Juice,Sweetened Ice Tea
+Breadstick,Black Bean Burger,Grilled Cheese
+Liliana Worcester
+Pepsi,Lemonade
+Vegetable Lasagna,Pizza,Fried Chicken
+Steven Steinborn
+Apple Juice,Apple Juice
+Pizza,Lasagna,Spaghetti
+Donald Malone
+Orange Juice,Dr. Pepper
+Vegetable Lasagna,Fried Chicken,Fettucini Alfredo
+Cleo Carter
+Apple Juice,Orange Juice
+Chicken Pesto,Chicken Pesto,Chicken Pesto
+Christopher James
+Coke,Coke
+Pizza,Grilled Cheese,Spaghetti
+Timothy Hitt
+Lemonade,Pepsi
+Gyro,Thai Curry,Chicken Parmesan
+Myra Bean
+Coke,Lemonade
+Black Bean Burger,Beef Stew,Chicken Pesto
+Jimmie Singley
+Apple Juice,Orange Juice
+Vegetable Lasagna,Gyro,Lasagna
+Martha Tudor
+Pepsi,Tea
+Fettucini Alfredo,Black Bean Burger,Lasagna
+Charles Garcia
+Dr. Pepper,Apple Juice
+Chicken Parmesan,Fettucini Alfredo,Fried Chicken
+Randall Wright
+Sprite,Sprite
+Gyro,Grilled Cheese,Spaghetti
+Marian Hamilton
+Water,Apple Juice
+Lasagna,Thai Curry,Chicken Pesto
+Frances German
+Lemonade,Sprite
+Grilled Cheese,Gyro,Fettucini Alfredo
+Todd Correa
+Sprite,Orange Juice
+Breadstick,Thai Curry,Black Bean Burger
+Brittney Baker
+Orange Juice,Sprite
+Breadstick,Vegetable Lasagna,Chicken Parmesan
+Terrance Conner
+Coke,Sprite
+Fettucini Alfredo,Grilled Cheese,Breadstick
+Fred Mahood
+Water,Sweetened Ice Tea
+Thai Curry,Vegetable Lasagna,BLT
+Marguerite Bouie
+Dr. Pepper,Tea
+Lasagna,Thai Curry,Spaghetti
+Tommy Hutchens
+Sweetened Ice Tea,Pepsi
+Fried Chicken,Gyro,Beef Stew
+Traci Tucker
+Apple Juice,Tea
+Grilled Cheese,Vegetable Lasagna,Chicken Parmesan
+Marcus Jones
+Sweetened Ice Tea,Water
+Gyro,Lasagna,Spaghetti
+Rogelio Graves
+Lemonade,Tea
+Chicken Pesto,Lasagna,Lasagna
+Karin Allen
+Water,Sprite
+Black Bean Burger,Fried Chicken,Gyro
+Kelley Ferguson
+Apple Juice,Water
+Fried Chicken,Pizza,Lasagna
+Frank Kingsley
+Sweetened Ice Tea,Dr. Pepper
+Spaghetti,Fried Chicken,Black Bean Burger
+Ernest Fackler
+Water,Sprite
+Black Bean Burger,Spaghetti,Lasagna
+Thelma Hawn
+Coke,Pepsi
+Lasagna,Spaghetti,Grilled Cheese
+Randy Ayala
+Orange Juice,Tea
+Breadstick,Black Bean Burger,Spaghetti
+Ruben Torres
+Tea,Pepsi
+Chicken Pesto,Vegetable Lasagna,Black Bean Burger
+Dorothy Vega
+Lemonade,Sprite
+Chicken Parmesan,Spaghetti,Spaghetti
+Curtis Reed
+Orange Juice,Lemonade
+Grilled Cheese,Chicken Pesto,Spaghetti

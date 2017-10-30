@@ -1,0 +1,129 @@
+		PARTY AND GUEST INFORMATION AND LOGISTICS
+
+---------------------Solution Summary---------------------
+Initial Budget: $800
+Total Optimized Spendings: $596.6
+Total Money Saved: $203.4
+Total Preferences Met: 60 of 100
+
+---------------Final Food/Drink Assignments---------------
+Francisco Smith: Pizza and Sweetened Ice Tea
+Elias Shook: Spaghetti and Sprite
+Brigitte Malmin*: Pizza and Orange Juice
+Bobby Clothier: Spaghetti and Sprite
+Priscilla Espinoza: Spaghetti and Sweetened Ice Tea
+Ron Leung: Breadstick and Sweetened Ice Tea
+Francis Lopez*: Chicken Pesto and Sweetened Ice Tea
+Candace Charbonneau*: Chicken Pesto and Pepsi
+Louis Yuengling: Pizza and Sweetened Ice Tea
+Stanley Cash: Spaghetti and Pepsi
+Jason White: Spaghetti and Coke
+Dennis Lajoie*: Chicken Pesto and Sprite
+Marshall Emme: Spaghetti and Orange Juice
+Timmy Forman: Chicken Pesto and Orange Juice
+Barbara Thompson*: Breadstick and Sweetened Ice Tea
+Odelia Watson: Spaghetti and Coke
+Regina Griest: Chicken Pesto and Sweetened Ice Tea
+Earline Dunseith: Pizza and Orange Juice
+Latisha Foster: Pizza and Orange Juice
+George Burgess*: Chicken Pesto and Pepsi
+Randall Brookman: Breadstick and Pepsi
+Tessa North*: Chicken Pesto and Orange Juice
+Roland Steward*: Breadstick and Pepsi
+Jeffrey Turner: Breadstick and Orange Juice
+Scott Ellis: Spaghetti and Orange Juice
+Greg Fox*: Spaghetti and Sprite
+William Delapp*: Pizza and Sweetened Ice Tea
+Rita Smith*: Chicken Pesto and Water
+Thomas Nesbitt*: Pizza and Orange Juice
+Milton Alexander: Breadstick and Coke
+Steven Steinborn: Chicken Pesto and Sweetened Ice Tea
+Donald Malone*: Spaghetti and Sprite
+Myra Bean: Chicken Pesto and Orange Juice
+Jimmie Singley*: Chicken Pesto and Sprite
+Martha Tudor*: Spaghetti and Pepsi
+Marian Hamilton: Chicken Pesto and Sprite
+Todd Correa: Chicken Pesto and Sweetened Ice Tea
+Terrance Conner*: Breadstick and Sweetened Ice Tea
+Tommy Hutchens: Spaghetti and Sweetened Ice Tea
+Traci Tucker: Chicken Pesto and Orange Juice
+Rogelio Graves: Spaghetti and Orange Juice
+Karin Allen: Breadstick and Sweetened Ice Tea
+Kelley Ferguson: Spaghetti and Pepsi
+Frank Kingsley*: Breadstick and Water
+Ernest Fackler: Breadstick and Sprite
+Ruben Torres*: Breadstick and Sprite
+Donovan Guevara: Breadstick and Dr. Pepper
+Thelma Minnich*: Breadstick and Dr. Pepper
+Gwen Marion*: Breadstick and Dr. Pepper
+Inell Mesta: Breadstick and Apple Juice
+Bernard Moncivais*: Pizza and Sprite
+Alex Yorke*: Pizza and Sprite
+Chris Ivan: Breadstick and Apple Juice
+Liliana Worcester: Pizza and Sprite
+Brittney Baker*: Pizza and Sprite
+Thelma Hawn*: Breadstick and Apple Juice
+Dorothy Vega: Breadstick and Dr. Pepper
+Marsha Mateo*: Chicken Pesto and Apple Juice
+Ana Robinson: Spaghetti and Apple Juice
+Richard Stansbery: Spaghetti and Apple Juice
+Lorraine Munro: Breadstick and Orange Juice
+Christina Litton*: Breadstick and Orange Juice
+Alice Martin: Breadstick and Orange Juice
+Dorothy Jones: Breadstick and Orange Juice
+Norma Kies: Breadstick and Orange Juice
+Ralph Johnson*: Breadstick and Orange Juice
+Ashley Chambers: Breadstick and Orange Juice
+Blanche James*: Breadstick and Orange Juice
+Robert Grace*: Breadstick and Orange Juice
+Kelly Schad: Breadstick and Orange Juice
+Mark Colletti: Breadstick and Orange Juice
+Debbie Brooks: Breadstick and Orange Juice
+Daphine Barnett*: Breadstick and Orange Juice
+Rick Mellish*: Breadstick and Orange Juice
+Wayne Ortega*: Breadstick and Orange Juice
+Michael Cobbs: Breadstick and Orange Juice
+Carol Laroche: Breadstick and Orange Juice
+Robert Luster: Breadstick and Orange Juice
+Scott Warren*: Breadstick and Orange Juice
+Rudy Frisco*: Breadstick and Orange Juice
+Rosetta Fritz: Breadstick and Orange Juice
+Lori Verge*: Breadstick and Orange Juice
+Robert Neave: Breadstick and Orange Juice
+Jeanne Benninger: Breadstick and Orange Juice
+Betty Gomez: Breadstick and Orange Juice
+Vance Cobb*: Breadstick and Orange Juice
+Jane Blanco*: Breadstick and Orange Juice
+Jackie Madho: Breadstick and Orange Juice
+Frank Mayer: Breadstick and Orange Juice
+Cleo Carter*: Breadstick and Orange Juice
+Christopher James: Breadstick and Orange Juice
+Timothy Hitt: Breadstick and Orange Juice
+Charles Garcia: Breadstick and Orange Juice
+Randall Wright: Breadstick and Orange Juice
+Frances German: Breadstick and Orange Juice
+Fred Mahood: Breadstick and Orange Juice
+Marguerite Bouie*: Breadstick and Orange Juice
+Marcus Jones: Breadstick and Orange Juice
+Randy Ayala: Breadstick and Orange Juice
+Curtis Reed*: Breadstick and Orange Juice
+
+* - Preferences not met
+
+---------------------Food Information---------------------
+Food Needed: 58x Breadstick ($3.4/ea)
+15x Chicken Pesto ($4.5/ea)
+16x Spaghetti ($4.5/ea)
+11x Pizza ($6.9/ea)
+Total Food Cost: $412.6
+
+---------------------Drink Information--------------------
+Drinks Needed: 13x Sprite ($2.3/ea)
+52x Orange Juice ($1.0/ea)
+3x Coke ($3.4/ea)
+2x Water ($3.5/ea)
+7x Pepsi ($3.2/ea)
+13x Sweetened Ice Tea ($1.1/ea)
+4x Dr. Pepper ($4.7/ea)
+6x Apple Juice ($4.9/ea)
+Total Drink Cost: $184.0
