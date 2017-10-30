@@ -7,5 +7,13 @@ Design and implement an algorithm that reads in the files and selects what drink
 - people.txt contains an arbitrary number of people with their preferred drinks and food; each entry will be 3 lines long (1st line: name (not unique), 2nd line: drinks (comma delimited, not sorted), 3rd line: food (comma delimited, not sorted).
 - drinks.txt and food.txt are arbitrarily large and each entry will be 1 line long in the following format: <drink or food name>:unit cost
 - Your answer should include an explanation of your algorithm, test cases, and a statement of all the assumptions you made.
+In case of Not Solvable:
+	(1) Meet drink needs
+	(2) Meet food needs
+Possible solutions: (Needed more constraints)
+	OptaPlanner
+	Knapsack
+
+
 - Feel free to use any data structures and packages or create your own. Submit all your files in a zipped directory.
  

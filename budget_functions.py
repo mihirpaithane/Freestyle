@@ -1,12 +1,21 @@
-def get_item_costs(filename):
+def get_item_costs(filename, type = 'List'):
 	file = open(filename,'r')
-	item_cost_dict = {}
+	if type == 'List':
+		item_cost_list = []
+	else:
+		item_cost_dict = {}
 	
 	for line in file:
 		item, cost = line.strip().split(':')
-		item_cost_dict[item] = float(cost)
+		if type == 'List':
+			item_cost_list.append((item, float(cost)))
+		else:
+			item_cost_dict[item] = float(cost)
 
-	return item_cost_dict
+	if type == 'List':
+		return item_cost_list
+	else:
+		return item_cost_dict
 
 def get_preferences(filename):
 	people = open(filename,'r')
@@ -19,7 +28,6 @@ def get_preferences(filename):
 			drinks.append(line.strip().split(','))
 		elif (count % 3) == 0:
 			food.append(line.strip().split(','))
-
 
 	# Check if zip is efficient
 	preferences = map(tuple, zip(names,drinks,food))

@@ -1,4 +1,4 @@
 Coke:2.3
 Sprite:4.0
-Apple Juice: 2.0
+Apple Juice:2.0
 Dr. Pepper:5.0
