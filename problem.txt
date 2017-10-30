@@ -4,7 +4,7 @@ Design and implement an algorithm that reads in the files and selects what drink
 
 - You are planning a party for an arbitrary number of people and you need to buy drinks and food.
 - Assume you’re given a budget (integer) and 3 files: people.txt, drinks.txt, food.txt
-- people.txt contains an arbitrary number of people with their preferred drinks and food; each entry will be 3 lines long (1st line: name (not unique), 2nd line: drinks (comma delimited, not sorted), 3rd line: food (comma delimited, not sorted).
+- people.txt contains an arbitrary number of people with their preferred drinks and food; each entry will be 3 lines long (1st line: name (not unique), 2nd line: drinks (comma delimited, not sorted), 3rd line: food (comma delimited, not sorted).	
 - drinks.txt and food.txt are arbitrarily large and each entry will be 1 line long in the following format: <drink or food name>:unit cost
 - Your answer should include an explanation of your algorithm, test cases, and a statement of all the assumptions you made.
 In case of Not Solvable:

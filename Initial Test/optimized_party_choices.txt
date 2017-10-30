@@ -1,23 +1,26 @@
-		PARTY AND GUEST INFORMATION AND LOGISTICS
+		PARTY AND GUEST LOGISTICS
 
+Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.
+Minimum budget of $42.6 is required to accommodate all attendees with their cheapest preferred food/drink combination.
 ---------------------Solution Summary---------------------
-Initial Budget: $26.0
-Total Optimized Spendings: $26.0
-Total Money Saved: $0.0
-Total Preferences Met: 1 of 4
-
----------------Final Food/Drink Assignments---------------
-Jui Paithane*: Cake and Apple Juice
-Mihir Paithane*: Cake and Apple Juice
-Mukul Paithane*: Cake and Apple Juice
-Gitanjali Paithane: Cake and Apple Juice
-
-* - Preferences not met
+Budget: $30.0
+Total Optimized Spendings: $26.3
+Total Money Saved: $3.7
+Total Preferences Met: 2 of 4
 
 ---------------------Food Information---------------------
 Food Needed: 4x Cake ($4.5/ea)
 Total Food Cost: $18.0
 
 ---------------------Drink Information--------------------
-Drinks Needed: 4x Apple Juice ($2.0/ea)
-Total Drink Cost: $8.0
+Drinks Needed: 1x Coke ($2.3/ea)
+3x Apple Juice ($2.0/ea)
+Total Drink Cost: $8.3
+
+---------------Final Food/Drink Assignments---------------
+Mihir Paithane: Cake and Coke
+Jui Paithane*: Cake and Apple Juice
+Mukul Paithane*: Cake and Apple Juice
+Gitanjali Paithane: Cake and Apple Juice
+
+* - Preferences not met

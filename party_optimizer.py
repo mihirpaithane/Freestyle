@@ -42,7 +42,7 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	####### SORT ASCENDING FOR FOOD AND DRINK, LCC = FIRST OF FOOD + FIRST OF DRINK ####### 
 	global_lcc = (foods[0][0], drinks[0][0], foods[0][1] + drinks[0][1])
 
-	#print "Global LCC: " + str(global_lcc)
+	# print "Global LCC: " + str(global_lcc)
 
 	# Determine lowest costing preferred food-drink combo for each individual
 	indiv_lccs = []
@@ -67,10 +67,15 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 
 	# BREAK PROGRAM #
 	if ppb < global_lcc[2]:
+		print "---------------------Solution Summary---------------------"
 		print "Not Solvable."
-		file.write("Given your budget, this party cannot be planned.")
+		file.write("---------------------Solution Summary---------------------\n")
+		file.write("Given your budget, this party cannot be planned.\n")
+		file.write("Minimum budget of $" + str(global_lcc[2]*num_people) + " is required to accommodate all attendees with the cheapest food/drink combination available.\n")
+		min_budget = sum(x[3] for x in indiv_lccs)
+		file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.")
 		file.close()
-		quit()
+		return
 
 	# Variable to denote if any change of satisfaction occurs (boolean)
 	change = True
@@ -90,6 +95,9 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	while change:
 		# Set change to false
 		change = False
+
+		# Update ppb for remaining budget and number of unsatisfied people
+		ppb = float(rem_budget) / satisfaction_vector.count(0)
 
 		# For each individual attending the party
 		for indiv in range(num_people):
@@ -116,11 +124,7 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 		# Number of unsatisfied individuals remaining
 		unsatisfied_individuals = satisfaction_vector.count(0)
 		
-		if unsatisfied_individuals != 0:
-			# Update ppb for remaining budget and number of unsatisfied people
-			ppb = float(rem_budget) / satisfaction_vector.count(0)
-		
-		else:
+		if unsatisfied_individuals == 0:
 			# No more individuals to satisfy
 			break
 
@@ -134,6 +138,53 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 
 			# Subtract cost of Global LCC from total budget
 			rem_budget = rem_budget - global_lcc[2]
+
+	# With remaining budget, determine if any more preferences can be met	
+	
+	flagged_indiv_lccs = []
+	count = 0
+	for indiv in indiv_lccs:
+		flagged_indiv_lccs.append((indiv[0], indiv[1], indiv[2], indiv[3], satisfaction_vector[count]))
+		count = count + 1
+
+	flagged_indiv_lccs.sort(key = operator.itemgetter(3))
+	total_satisfied_individuals = [x[4] for x in flagged_indiv_lccs].count(1)
+	final_satisfactions = {}
+
+	for indiv in flagged_indiv_lccs:
+
+		# If they haven't been satisfied
+		if indiv[4] == 0:
+			print indiv
+			# print "Unsatisfied:("
+			# Get location of unsatisfied individual in final fdc
+			index = [x[0] for x in final_fdc].index(indiv[0])
+			# print "Cost to change: " + str(indiv[3] - final_fdc[index][3])
+			# print "Resulting rem_budget before change: " + str(rem_budget)
+
+			# If changing stays within budget
+			if rem_budget - (indiv[3] - final_fdc[index][3]) >= 0:
+				
+				# print "Changed To Preferred!"
+				diff = indiv[3] - final_fdc[index][3]
+
+				# Change their food/drink combo
+				final_fdc[index] = (indiv[0], indiv[1], indiv[2], indiv[3])
+				# print final_fdc[index]
+
+				# Decrement remaining budget based on adding the new preferred combination
+				rem_budget = rem_budget - diff
+
+				total_satisfied_individuals = total_satisfied_individuals + 1
+				final_satisfactions[indiv[0]] = 1
+			else:
+				final_satisfactions[indiv[0]] = 0
+		else:
+			final_satisfactions[indiv[0]] = 1
+
+
+			
+			# print "Remaining Budget after change: " + str(rem_budget)
 
 	# Produce shopping list for party
 
@@ -155,42 +206,32 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 		else:
 			final_drink_choices[drink] = 1
 
-	print "\t\tPARTY AND GUEST INFORMATION AND LOGISTICS\n"
-	file.write("\t\tPARTY AND GUEST INFORMATION AND LOGISTICS\n\n")
+	print "\t\tPARTY AND GUEST LOGISTICS\n"
+	file.write("\t\tPARTY AND GUEST LOGISTICS\n\n")
 
+	min_budget = sum(x[3] for x in indiv_lccs)
+	file.write("Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.\n")
+	file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.\n")
+		
 	print "---------------------Solution Summary---------------------"
 	file.write("---------------------Solution Summary---------------------")
-	print "Initial Budget: $" + str(budget)
-	file.write("\nInitial Budget: $" + str(budget))
+	print "Budget: $" + str(budget)
+	file.write("\nBudget: $" + str(budget))
 	print "Total Optimized Spendings: $" + str(budget - rem_budget)
 	file.write("\nTotal Optimized Spendings: $" + str(budget - rem_budget))
-	print "Total Money Saved: $" + str(rem_budget)
-	file.write("\nTotal Money Saved: $" + str(rem_budget))
+	if str(budget) == str(budget - rem_budget):
+		print "Total Money Saved: $" + str(int(rem_budget))
+		file.write("\nTotal Money Saved: $" + str(int(rem_budget)))
+	else:
+		print "Total Money Saved: $" + str(rem_budget)
+		file.write("\nTotal Money Saved: $" + str(rem_budget))
 
 	num_pref_met = satisfaction_vector.count(1)
-	print "Total Preferences Met: " + str(num_pref_met) + " of " + str(len(satisfaction_vector))
-	file.write("\nTotal Preferences Met: "+ str(num_pref_met) + " of " + str(len(satisfaction_vector)))
+	print "Total Preferences Met: " + str(total_satisfied_individuals) + " of " + str(len(satisfaction_vector))
+	file.write("\nTotal Preferences Met: "+ str(total_satisfied_individuals) + " of " + str(len(satisfaction_vector)))
 
-
-	print "\n---------------Final Food/Drink Assignments---------------"
-	file.write("\n\n---------------Final Food/Drink Assignments---------------\n")
-
-	count = 0
-	for info in final_fdc:
-
-		if satisfaction_vector[count] == 0:
-			s = info[0] + "*: " + info[1] + " and " + info[2]
-		else:
-			s = info[0] + ": " + info[1] + " and " + info[2] 
-		print s
-		file.write(s + "\n")
-		count = count + 1
-
-	print "\n* - Preferences not met"
-	file.write("\n* - Preferences not met\n")
-
-	print("\n---------------------Food Information---------------------")
-	file.write("\n---------------------Food Information---------------------\n")
+	print("---------------------Food Information---------------------")
+	file.write("\n\n---------------------Food Information---------------------\n")
 	print "Food Needed: " 
 	file.write("Food Needed: ")
 	total_food_cost = 0.0
@@ -218,4 +259,29 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 
 	print "Total Drink Cost: $" + str(total_drinks_cost)
 	file.write("Total Drink Cost: $" + str(total_drinks_cost))
+
+	print "\n---------------Final Food/Drink Assignments---------------"
+	file.write("\n\n---------------Final Food/Drink Assignments---------------\n")
+
+	count = 0
+	for info in final_fdc:
+		if final_satisfactions[info[0]] == 0:
+			s = info[0] + "*: " + info[1] + " and " + info[2]
+		else:
+			s = info[0] + ": " + info[1] + " and " + info[2] 
+
+		# if satisfaction_vector[count] == 0:
+		# 	s = info[0] + "*: " + info[1] + " and " + info[2]
+		# else:
+		# 	s = info[0] + ": " + info[1] + " and " + info[2] 
+		print s
+		file.write(s + "\n")
+		count = count + 1
+
+	print "\n* - Preferences not met"
+	file.write("\n* - Preferences not met\n")
 	file.close()
+
+create_optimized_party_choices(800.0, 'Testing/Test Case Preferences/people0.txt', 'Testing/Test Case Outputs/optimized_party_0.txt', food_file = 'Testing/food.txt', drinks_file = 'Testing/drinks.txt')
+
+#create_optimized_party_choices(30.0, 'Initial Test/people.txt', 'Initial Test/optimized_party_choices.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
