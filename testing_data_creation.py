@@ -19,14 +19,14 @@ for j in range(5):
 	for i in range(100):
 		file.write(str(name_list[i]) + "\n")
 
-		drink_choices = np.random.choice(drink_list, 2)
+		drink_choices = np.random.choice(drink_list, 2, replace = False)
 		s = ''
 		for drink in drink_choices:
 			s = s + str(drink) + ","
 		
 		file.write(s[:len(s)-1] + "\n")
 
-		food_choices = np.random.choice(food_list, 3)
+		food_choices = np.random.choice(food_list, 3, replace = False)
 		s = ''
 		for food in food_choices:
 			s = s + str(food) + ","

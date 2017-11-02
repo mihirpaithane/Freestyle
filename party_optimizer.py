@@ -2,6 +2,8 @@ from budget_functions import *
 import operator
 
 def create_optimized_party_choices(allotted_budget, preferences_file, final_file_name, food_file = 'food.txt', drinks_file = 'drinks.txt'):
+	optimized_data = {}
+
 	filename = final_file_name
 	file = open(filename, "w+")
 
@@ -11,10 +13,15 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	# Extract Food Cost List and Dictionary
 	food_cost_list = get_item_costs(food_file)
 	food_cost_dict = get_item_costs(food_file, type = 'Dict')
+	optimized_data['Food Cost List'] = food_cost_list
+	optimized_data['Food Cost Dict'] = food_cost_dict
 
 	# Extract Drink Cost List
 	drink_cost_list = get_item_costs(drinks_file)
 	drink_cost_dict = get_item_costs(drinks_file, type = 'Dict')
+	optimized_data['Drink Cost List'] = drink_cost_list
+	optimized_data['Drink Cost Dict'] = drink_cost_dict
+
 
 	# Create Cost Database
 	cost_data = (food_cost_list, drink_cost_list)
@@ -75,6 +82,8 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 		min_budget = sum(x[3] for x in indiv_lccs)
 		file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.")
 		file.close()
+
+		
 		return
 
 	# Variable to denote if any change of satisfaction occurs (boolean)
@@ -213,28 +222,50 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	file.write("Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.\n")
 	file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.\n")
 		
+	# 0 - Min Budget
+	optimized_data['Min Budget'] = min_budget
+
+
 	print "---------------------Solution Summary---------------------"
 	file.write("---------------------Solution Summary---------------------")
 	print "Budget: $" + str(budget)
 	file.write("\nBudget: $" + str(budget))
-	print "Total Optimized Spendings: $" + str(budget - rem_budget)
-	file.write("\nTotal Optimized Spendings: $" + str(budget - rem_budget))
+
+	# 1 - Budget
+	optimized_data['Budget'] = budget
+
+	print "Total Spent: $" + str(budget - rem_budget)
+	file.write("\nTotal Spent: $" + str(budget - rem_budget))
+
+	# 2 - Total Spent
+	optimized_data['Total Spent'] = (budget - rem_budget)
+
+	# 3 - Total Money Left
 	if str(budget) == str(budget - rem_budget):
-		print "Total Money Saved: $" + str(int(rem_budget))
-		file.write("\nTotal Money Saved: $" + str(int(rem_budget)))
+		print "Total Money Left: $" + str(int(rem_budget))
+		file.write("\nTotal Money Left: $" + str(int(rem_budget)))
+		optimized_data['Total Money Left'] = int(rem_budget)
 	else:
 		print "Total Money Saved: $" + str(rem_budget)
 		file.write("\nTotal Money Saved: $" + str(rem_budget))
+		optimized_data['Total Money Left'] = rem_budget
 
-	num_pref_met = satisfaction_vector.count(1)
+	# 4 - Total Preferences Met
+	optimized_data['Total Preferences Met'] = total_satisfied_individuals
+	# 5 - Total Number of People
+	optimized_data['Number of Attendees'] = num_people
+
 	print "Total Preferences Met: " + str(total_satisfied_individuals) + " of " + str(len(satisfaction_vector))
 	file.write("\nTotal Preferences Met: "+ str(total_satisfied_individuals) + " of " + str(len(satisfaction_vector)))
 
 	print("---------------------Food Information---------------------")
 	file.write("\n\n---------------------Food Information---------------------\n")
 	print "Food Needed: " 
-	file.write("Food Needed: ")
+	file.write("Food Needed: \n")
 	total_food_cost = 0.0
+
+	##### FIGURE THIS OUT ######
+
 	for food in final_food_choices:
 		total_item_cost = final_food_choices[food] * food_cost_dict[food]
 		total_food_cost = total_food_cost + total_item_cost
@@ -245,10 +276,13 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	print "Total Food Cost: $" + str(total_food_cost)
 	file.write("Total Food Cost: $" + str(total_food_cost))
 
+	optimized_data['Final Food Choices'] = final_food_choices
+	optimized_data['Total Food Cost'] = total_food_cost
+
 	print("\n---------------------Drink Information--------------------")
 	file.write("\n\n---------------------Drink Information--------------------\n")
 	print "Drinks Needed: "
-	file.write("Drinks Needed: ")
+	file.write("Drinks Needed: \n")
 	total_drinks_cost = 0.0
 	for drink in final_drink_choices:
 		total_item_cost = final_drink_choices[drink] * drink_cost_dict[drink]
@@ -260,15 +294,22 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	print "Total Drink Cost: $" + str(total_drinks_cost)
 	file.write("Total Drink Cost: $" + str(total_drinks_cost))
 
+	optimized_data['Final Drink Choices'] = final_drink_choices
+	optimized_data['Total Drink Cost'] = total_drinks_cost
+
 	print "\n---------------Final Food/Drink Assignments---------------"
 	file.write("\n\n---------------Final Food/Drink Assignments---------------\n")
 
+
+	final_fdc.sort()
+	optimized_data['Final Food Drink Combinations'] = final_fdc
+	optimized_data['Final Satisfactions'] = final_satisfactions
 	count = 0
 	for info in final_fdc:
 		if final_satisfactions[info[0]] == 0:
-			s = info[0] + "*: " + info[1] + " and " + info[2]
+			s = info[0] + "*: " + info[1] + " and " + info[2] + " ($" + str(info[3]) + ")"
 		else:
-			s = info[0] + ": " + info[1] + " and " + info[2] 
+			s = info[0] + ": " + info[1] + " and " + info[2] + " ($" + str(info[3]) + ")"
 
 		# if satisfaction_vector[count] == 0:
 		# 	s = info[0] + "*: " + info[1] + " and " + info[2]
@@ -282,6 +323,4 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	file.write("\n* - Preferences not met\n")
 	file.close()
 
-create_optimized_party_choices(800.0, 'Testing/Test Case Preferences/people0.txt', 'Testing/Test Case Outputs/optimized_party_0.txt', food_file = 'Testing/food.txt', drinks_file = 'Testing/drinks.txt')
-
-#create_optimized_party_choices(30.0, 'Initial Test/people.txt', 'Initial Test/optimized_party_choices.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
+	return optimized_data
