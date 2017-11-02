@@ -1,6 +1,10 @@
 # Freestyle
 
-This is the final solution for the party optimization problem. The code for this solution is written in Python 2. To run the GUI and code, run the file named "standalone_application.py" using Python 2. (This code was built using Python 2 and will not run with Python 3, given the Tkinter library is named differently in Python 3). 
+This is the final solution for the party optimization problem. 
+
+This program will optimize what food and drinks you should buy to host your party given the preferences of the attendees and the costs of the food and drinks.
+
+The code for this solution is written in Python 2. To run the GUI and code, run the file named "standalone_application.py" using Python 2. (This code was built using Python 2 and will not run with Python 3, given the Tkinter library is named differently in Python 3). 
 
 The folder labeled "Testing" and "Initial Test" contain files for preferences, food, and drinks to test the optimizer on different sets of data.
 
@@ -13,8 +17,4 @@ How to use the GUI:
 4. Click "Upload Drinks" and choose your drinks file.
 5. Click "Optimize" to produce the optimized information in the light blue region.
 
-Mihir Paithane
-
-mihir.paithane@duke.edu
-
-Computer Science, Duke University Class of 2020
+Enjoy planning your party!
