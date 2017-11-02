@@ -231,4 +231,4 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 # This commented out portion runs the optimizer on a simple set of preferences, food, and drinks.
 # It will write to a file called "simple_optimization.txt" for you to see the results of the 
 # optimization on a small set of data.
-create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'simple_optimization.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
+# create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'simple_optimization.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
