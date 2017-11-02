@@ -1,4 +1,41 @@
+		PARTY AND GUEST LOGISTICS
+
+Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.
+Minimum budget of $883.8 is required to accommodate all attendees with their cheapest preferred food/drink combination.
 ---------------------Solution Summary---------------------
-Given your budget, this party cannot be planned.
-Minimum budget of $440.0 is required to accommodate all attendees with the cheapest food/drink combination available.
-Minimum budget of $884.1 is required to accommodate all attendees with their cheapest preferred food/drink combination.
+Budget: $883.8
+Total Spent: $883.8
+Total Money Left: $0
+Total Preferences Met: 100 of 100
+
+---------------------Food Information---------------------
+Food Needed: 
+7x Grilled Cheese ($9.7/ea)
+3x Chicken Parmesan ($10.3/ea)
+25x Breadstick ($3.4/ea)
+6x BLT ($8.7/ea)
+19x Chicken Pesto ($4.5/ea)
+1x Black Bean Burger ($17.8/ea)
+1x Thai Curry ($14.0/ea)
+3x Vegetable Lasagna ($10.0/ea)
+13x Fettucini Alfredo ($10.0/ea)
+16x Spaghetti ($4.5/ea)
+6x Pizza ($6.9/ea)
+Total Food Cost: $626.7
+
+---------------------Drink Information--------------------
+Drinks Needed: 
+20x Sprite ($2.3/ea)
+21x Orange Juice ($1.0/ea)
+3x Tea ($6.3/ea)
+8x Coke ($3.4/ea)
+9x Water ($3.5/ea)
+14x Pepsi ($3.2/ea)
+14x Sweetened Ice Tea ($1.1/ea)
+8x Dr. Pepper ($4.7/ea)
+3x Apple Juice ($4.9/ea)
+Total Drink Cost: $257.1
+
+---------------Final Food/Drink Assignments---------------
+
+* - Preferences not met

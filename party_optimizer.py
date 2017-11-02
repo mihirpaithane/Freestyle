@@ -1,4 +1,5 @@
 from budget_functions import *
+from decimal import Decimal 
 import operator
 
 def create_optimized_party_choices(allotted_budget, preferences_file, final_file_name, food_file = 'food.txt', drinks_file = 'drinks.txt'):
@@ -90,17 +91,19 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	# Sort individual LCCs in increasing order
 	indiv_lccs.sort(key = operator.itemgetter(3))
 
-	
+
 	# Remaining budget after assigning everyone global LCC
 	rem_budget = budget - (num_people * global_lcc[2])
 
 
 	for i in range(num_people):
+		print i
 		afford = rem_budget + global_lcc[2]
-		# print afford
-		# print indiv_lccs[i]
+		print "Afford: " + str(afford)
+		print "Indiv LCC: " + str(Decimal(indiv_lccs[i][3]))
+		print Decimal(indiv_lccs[i][3]) == Decimal(afford)
 		# I can afford their choice
-		if indiv_lccs[i][3] <= afford:
+		if round(indiv_lccs[i][3], 2) <= round(afford, 2):
 			final_fdc.append((indiv_lccs[i][0], indiv_lccs[i][1], indiv_lccs[i][2], indiv_lccs[i][3], satisfied))
 			rem_budget = rem_budget - (indiv_lccs[i][3] - global_lcc[2])
 		# I can't afford their choice, so give them the global LCC 
@@ -228,4 +231,4 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 
 	return optimized_data
 
-create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'revised_alg.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
+# create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'revised_alg.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')

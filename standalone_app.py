@@ -62,10 +62,10 @@ class App:
 
         opt_text = ''
         
-        opt_text = opt_text + 'PARTY AND GUEST LOGISTICS\n\n'
+        opt_text = opt_text + '                            PARTY AND GUEST LOGISTICS\n\n'
         opt_text = opt_text + 'Minimum budget of $' + str(opt['Min Budget']) + ' is required to accommodate all attendees with their cheapest preferred food/drink combination.\n'
             
-        opt_text = opt_text + '\n---------------------Solution Summary---------------------\n'
+        opt_text = opt_text + '\n--------------------------------Solution Summary--------------------------------\n'
         opt_text = opt_text + 'Budget: $' + str(opt['Budget'])
         
         if len(opt.keys()) == 6:
@@ -75,7 +75,7 @@ class App:
             opt_text = opt_text + '\nTotal Spent: $' + str(opt['Total Spent'])
             opt_text = opt_text + '\nTotal Money Left: $' + str(opt['Total Money Left'])
             opt_text = opt_text + '\nTotal Preferences Met: ' + str(opt['Total Preferences Met']) + ' out of ' + str(opt['Number of Attendees'])
-            opt_text = opt_text + '\n\n---------------------FOOD INFORMATION---------------------'
+            opt_text = opt_text + '\n\n--------------------------------FOOD INFORMATION--------------------------------'
             opt_text = opt_text + '\nFood Needed:'
             
             final_food_choices = opt['Final Food Choices']
@@ -85,7 +85,7 @@ class App:
             opt_text = opt_text + '\nTotal Food Cost: $' + str(opt['Total Food Cost'])
 
 
-            opt_text = opt_text + '\n\n---------------------DRINK INFORMATION---------------------'
+            opt_text = opt_text + '\n\n-------------------------------Drink Information--------------------------------'
             opt_text = opt_text + '\nDrinks Needed:'
 
             final_drink_choices = opt['Final Drink Choices']
@@ -94,7 +94,7 @@ class App:
                 opt_text = opt_text + '\n' + str(final_drink_choices[drink]) + "x " + str(drink) + " ($" + str(drink_cost_dict[drink]) + "/ea)"
             opt_text = opt_text + '\nTotal Drink Cost: $' + str(opt['Total Drink Cost'])
             
-            opt_text = opt_text + '\n\n---------------Final Food/Drink Assignments---------------'
+            opt_text = opt_text + '\n\n--------------------------Final Food/Drink Assignments--------------------------'
             final_fdc = opt['Final Food Drink Combinations']
 
             for info in final_fdc:
@@ -114,6 +114,7 @@ class App:
 
 root = Tk()
 root.config(background = "#80dfff")
+root.title('Party Optimizer')
 width = root.winfo_screenwidth()
 height = root.winfo_screenheight()
 root.geometry('%sx%s' % (width, height))
