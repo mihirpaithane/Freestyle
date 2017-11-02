@@ -14,5 +14,7 @@ How to use the GUI:
 5. Click "Optimize" to produce the optimized information in the light blue region.
 
 Mihir Paithane
+
 mihir.paithane@duke.edu
+
 Computer Science, Duke University Class of 2020
