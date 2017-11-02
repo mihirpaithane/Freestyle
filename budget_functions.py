@@ -1,3 +1,6 @@
+# This library contains all the functions necessary to extract the information from the text files and
+# place the data into appropriate data structures for optimzation.
+
 def get_item_costs(filename, type = 'List'):
 	file = open(filename,'r')
 	if type == 'List':

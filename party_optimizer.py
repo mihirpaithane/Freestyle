@@ -1,8 +1,7 @@
 from budget_functions import *
-from decimal import Decimal 
 import operator
 
-def create_optimized_party_choices(allotted_budget, preferences_file, final_file_name, food_file = 'food.txt', drinks_file = 'drinks.txt'):
+def create_optimized_party_choices(allotted_budget, preferences_file, final_file_name, food_file, drinks_file):
 	satisfied, unsatisfied = 1, 0
 
 	optimized_data = {}
@@ -19,12 +18,11 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	optimized_data['Food Cost List'] = food_cost_list
 	optimized_data['Food Cost Dict'] = food_cost_dict
 
-	# Extract Drink Cost List
+	# Extract Drink Cost List and Dictionary
 	drink_cost_list = get_item_costs(drinks_file)
 	drink_cost_dict = get_item_costs(drinks_file, type = 'Dict')
 	optimized_data['Drink Cost List'] = drink_cost_list
 	optimized_data['Drink Cost Dict'] = drink_cost_dict
-
 
 	# Create Cost Database
 	cost_data = (food_cost_list, drink_cost_list)
@@ -42,10 +40,12 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	foods = food_cost_list
 	drinks = drink_cost_list
 
+	# Sort all food and drinks available by their unit cost in increasing order
 	foods.sort(key=operator.itemgetter(1))
 
 	drinks.sort(key=operator.itemgetter(1))
 
+	# Determine the global LCC (choosing cheapest food and cheapest drink item)
 	global_lcc = (foods[0][0], drinks[0][0], foods[0][1] + drinks[0][1])
 
 	# Determine lowest costing preferred food-drink combo for each individual
@@ -54,31 +54,34 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	for person in preferences:
 		indiv_lcc = ("","",float("inf"))
 
+		# Extract all preferred food and drink items for an individual
 		indiv_foods = [f for f in food_cost_list if f[0] in person[2]]
 		indiv_drinks = [d for d in drink_cost_list if d[0] in person[1]]
+		
+		# Sort all preferred food and drink items for the individual by their unit cost in increasing order
 		indiv_foods.sort(key = operator.itemgetter(1))
 		indiv_drinks.sort(key = operator.itemgetter(1))
 
+		# Create individual LCC
 		indiv_lcc = (person[0], indiv_foods[0][0], indiv_drinks[0][0], indiv_foods[0][1] + indiv_drinks[0][1])
 		indiv_lccs.append(indiv_lcc)
 
-	# 0 - Min Budget
+	# Determine minimum budget needed to provide all attendees with their lowest costing preferred food and drink
+	# combination
 	min_budget = sum(x[3] for x in indiv_lccs)
 
 	optimized_data['Min Budget'] = min_budget
 
-
-	# 1 - Budget
 	optimized_data['Budget'] = budget
 
-	# BREAK PROGRAM #
+	# If the budget is less than the minimum amount of money needed to give all attendees the overall cheapest
+	# food and drink combination
 	if budget < (global_lcc[2] * num_people):
 		print "---------------------Solution Summary---------------------"
 		print "Not Solvable."
 		file.write("---------------------Solution Summary---------------------\n")
 		file.write("Given your budget, this party cannot be planned.\n")
 		file.write("Minimum budget of $" + str(global_lcc[2]*num_people) + " is required to accommodate all attendees with the cheapest food/drink combination available.\n")
-		min_budget = sum(x[3] for x in indiv_lccs)
 		file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.")
 		file.close()
 
@@ -87,35 +90,30 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	# Final food-drink combo list
 	final_fdc = []
 
-
-	# Sort individual LCCs in increasing order
+	# Sort individual LCCs based on the cost of the combo in increasing order 
 	indiv_lccs.sort(key = operator.itemgetter(3))
 
-
-	# Remaining budget after assigning everyone global LCC
+	# Remaining budget after assigning everyone global LCC (leftover money if all individuals were
+	# given lowest costing combo)
 	rem_budget = budget - (num_people * global_lcc[2])
 
-
 	for i in range(num_people):
-		print i
 		afford = rem_budget + global_lcc[2]
-		print "Afford: " + str(afford)
-		print "Indiv LCC: " + str(Decimal(indiv_lccs[i][3]))
-		print Decimal(indiv_lccs[i][3]) == Decimal(afford)
-		# I can afford their choice
+		
+		# Can afford their choice
 		if round(indiv_lccs[i][3], 2) <= round(afford, 2):
 			final_fdc.append((indiv_lccs[i][0], indiv_lccs[i][1], indiv_lccs[i][2], indiv_lccs[i][3], satisfied))
 			rem_budget = rem_budget - (indiv_lccs[i][3] - global_lcc[2])
-		# I can't afford their choice, so give them the global LCC 
+		# Can't afford their choice, so give them the global LCC 
 		else:
 			final_fdc.append((indiv_lccs[i][0], global_lcc[0], global_lcc[1], global_lcc[2], unsatisfied))
 
 	# Produce shopping list for party
 
-
 	final_food_choices = {}
 	final_drink_choices = {}
 
+	# Determine counts of food and drinks needed for the party
 	for c in final_fdc:
 		food = c[1]
 		drink = c[2]
@@ -132,10 +130,11 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 			final_drink_choices[drink] = 1
 
 
+	# Print all data and information
 	print "\t\tPARTY AND GUEST LOGISTICS\n"
-	file.write("\t\tPARTY AND GUEST LOGISTICS\n\n")
+	file.write("\t\t\t\t\tPARTY AND GUEST LOGISTICS\n\n")
 
-	file.write("Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.\n")
+	# file.write("Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.\n")
 	file.write("Minimum budget of $" + str(min_budget) + " is required to accommodate all attendees with their cheapest preferred food/drink combination.\n")
 
 
@@ -148,10 +147,8 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	print "Total Spent: $" + str(budget - rem_budget)
 	file.write("\nTotal Spent: $" + str(budget - rem_budget))
 
-	# 2 - Total Spent
 	optimized_data['Total Spent'] = (budget - rem_budget)
 
-	# 3 - Total Money Left
 	if str(budget) == str(budget - rem_budget):
 		print "Total Money Left: $" + str(int(rem_budget))
 		file.write("\nTotal Money Left: $" + str(int(rem_budget)))
@@ -161,11 +158,10 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 		file.write("\nTotal Money Left: $" + str(rem_budget))
 		optimized_data['Total Money Left'] = rem_budget
 
-	# 4 - Total Preferences Met
+	# Total number of satisfied individuals
 	total_satisfied_individuals = [x[4] for x in final_fdc].count(1)
 
 	optimized_data['Total Preferences Met'] = total_satisfied_individuals
-	# 5 - Total Number of People
 	optimized_data['Number of Attendees'] = num_people
 
 	print "Total Preferences Met: " + str(total_satisfied_individuals) + " of " + str(num_people)
@@ -211,12 +207,12 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 	print "\n---------------Final Food/Drink Assignments---------------"
 	file.write("\n\n---------------Final Food/Drink Assignments---------------\n")
 
-	# Sort attendees alphabetically
+	# Sort attendees alphabetically (for standardized visualization purposes)
 	final_fdc.sort()
-
 
 	optimized_data['Final Food Drink Combinations'] = final_fdc	
 
+	# Print all attendees and the food and drink combo they were provided
 	for info in final_fdc:
 		# If the individual was satisfied with their LCC
 		if info[4] == 0:
@@ -224,11 +220,15 @@ def create_optimized_party_choices(allotted_budget, preferences_file, final_file
 		# If they were not satisfied (i.e. They were given the Global LCC)
 		else:
 			s = info[0] + ": " + info[1] + " and " + info[2] + " ($" + str(info[3]) + ")"
-
+		file.write(s + "\n")
+		print s
 	print "\n* - Preferences not met"
 	file.write("\n* - Preferences not met\n")
 	file.close()
 
 	return optimized_data
 
-# create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'revised_alg.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')
+# This commented out portion runs the optimizer on a simple set of preferences, food, and drinks.
+# It will write to a file called "simple_optimization.txt" for you to see the results of the 
+# optimization on a small set of data.
+create_optimized_party_choices((6.5+6.8+12.3+17.0), 'Initial Test/people.txt', 'simple_optimization.txt', food_file = 'Initial Test/food.txt', drinks_file = 'Initial Test/drinks.txt')

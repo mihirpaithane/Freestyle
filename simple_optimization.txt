@@ -1,6 +1,5 @@
-		PARTY AND GUEST LOGISTICS
+					PARTY AND GUEST LOGISTICS
 
-Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.
 Minimum budget of $42.6 is required to accommodate all attendees with their cheapest preferred food/drink combination.
 ---------------------Solution Summary---------------------
 Budget: $42.6
@@ -23,5 +22,9 @@ Drinks Needed:
 Total Drink Cost: $10.3
 
 ---------------Final Food/Drink Assignments---------------
+Betsy Hill: Chicken and Apple Juice ($17.0)
+Bob Jones: Tacos and Sprite ($12.3)
+Mihir Paithane: Cake and Coke ($6.8)
+Robert Robanovic: Cake and Apple Juice ($6.5)
 
 * - Preferences not met

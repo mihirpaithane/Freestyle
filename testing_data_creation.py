@@ -1,5 +1,11 @@
+# This program was used to randomly generate preferences based on a fixed list of
+# food and drink items. There are 100 total party attendees and thus 100 preferences
+# determined.
+
 import names
 import numpy as np
+
+
 name_list = [names.get_full_name().encode("utf-8") for x in range(100)]
 
 food_list = ["Chicken Pesto", "Chicken Parmesan", "Beef Stew", "Fettucini Alfredo", 
