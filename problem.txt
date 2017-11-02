@@ -1,4 +1,3 @@
-
 MAIN PROBLEM:
 Design and implement an algorithm that reads in the files and selects what drinks and foods you should purchase within your budget based on the information in the files. Be creative in how you optimize food and drinks based on preferences.
 

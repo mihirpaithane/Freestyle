@@ -1,0 +1,27 @@
+		PARTY AND GUEST LOGISTICS
+
+Given your budget, this party cannot accommodate all attendees with their cheapest preferred food/drink combination.
+Minimum budget of $42.6 is required to accommodate all attendees with their cheapest preferred food/drink combination.
+---------------------Solution Summary---------------------
+Budget: $42.6
+Total Spent: $42.6
+Total Money Left: $0
+Total Preferences Met: 4 of 4
+
+---------------------Food Information---------------------
+Food Needed: 
+2x Cake ($4.5/ea)
+1x Chicken ($15.0/ea)
+1x Tacos ($8.3/ea)
+Total Food Cost: $32.3
+
+---------------------Drink Information--------------------
+Drinks Needed: 
+1x Coke ($2.3/ea)
+1x Sprite ($4.0/ea)
+2x Apple Juice ($2.0/ea)
+Total Drink Cost: $10.3
+
+---------------Final Food/Drink Assignments---------------
+
+* - Preferences not met
